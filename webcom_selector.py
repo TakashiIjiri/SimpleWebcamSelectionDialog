@@ -19,8 +19,10 @@ class WebcomSelector(tk.Frame):
             c = cv2.VideoCapture(i, cv2.CAP_DSHOW)
             ret, frame = c.read()
             if ret:
-                        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                 print(frame.shape, c.getBackendName())
+                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                ratio = frame.shape[0] / frame.shape[1]
+                frame = cv2.resize(frame, (300, int(300*ratio)), interpolation=cv2.INTER_LANCZOS4)
                 self.webcam_ids.append([i, frame])
             c.release()
             cv2.destroyAllWindows()
