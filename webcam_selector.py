@@ -76,7 +76,8 @@ if __name__ == "__main__":
     while 1:
         ret, frame = cap.read()
         cv2.imshow('frame', frame)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+        k = cv2.waitKey(1)
+        if k == ord('q') or k == 27:
             break
 
     print("finish")
