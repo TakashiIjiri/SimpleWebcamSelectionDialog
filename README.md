@@ -1,6 +1,7 @@
 接続されている複数のwebcameを検索・提示して，ひとつを選択するためのダイアログを表示するプログラムです.  
-tkinter, Pillow, opencvを利用しています．  
-動作確認は python 3.8, opencv-python, Pillow, pycharm環境で行なっています.  
+tkinter, Pillow, opencvを利用しています．動作確認は python 3.8, opencv-python, Pillow, pycharm環境で行なっています.  
+
+tkinterをメインで利用しているコードからこのコードを利用することはできません．
 
 
 This program searches multiple  webcams connected to the pc and
@@ -12,7 +13,7 @@ useage:
     idx = select_webcam_idx()  
 
 note:
-  this is not available if your program uses tkinter. 
+  this is not available if your program uses tkinter.
 
 
 sample (3 webcams are available)  
