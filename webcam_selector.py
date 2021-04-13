@@ -62,14 +62,13 @@ class WebcomSelector(tk.Frame):
         return self.var_idx.get()
 
 
-def select_webcam_idx(tk_root):
-    dlg = WebcomSelector(_root=tk_root)
+def select_webcam_idx():
+    dlg = WebcomSelector(_root=tk.Tk())
     dlg.mainloop()
     return dlg.get_selected_idx()
 
 
 if __name__ == "__main__":
-    root = tk.Tk()
     idx = select_webcam_idx(root)
 
     cap = cv2.VideoCapture(idx, cv2.CAP_DSHOW)
